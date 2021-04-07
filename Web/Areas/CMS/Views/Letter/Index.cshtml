@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Letter>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-12 my-4 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                Gelen Başvurular
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered dataTable" id="tablom">
+                        <thead>
+                            <tr>
+                                <th>Ad Soyad</th>
+                                <th>Email</th>
+                                <th>Mesaj</th>
+                                <th>Konu</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model == null || Model.Count() == 0)
+                            {
+                                <tr>
+                                    <td colspan="8" class="text-center">
+                                        Siyahı boşdur
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @foreach (var letter in Model)
+                                {
+                                    <tr data-id="">
+                                        <td>
+                                            @(letter.FullName.Length > 30 ? letter.FullName.Substring(0, 30) : letter.FullName)
+                                        </td>
+                                        <td>
+                                            @(letter.Email.Length > 30 ? letter.Email.Substring(0, 30) : letter.Email)
+                                        </td>
+                                        <td>
+                                            @(letter.Message.Length > 30 ? letter.Message.Substring(0, 30) : letter.Message)
+                                        </td>
+                                        <td>
+                                            @(letter.Subject.Length > 30 ? letter.Subject.Substring(0, 30) : letter.Subject)
+                                        </td>
+                                        <td>
+                                            @letter.RecordedAtDate.ToString("dd/MM/yyyy HH:mm:ss")
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $('#tablom').DataTable({
+            language: {
+                info: "_TOTAL_ kayıttan _START_ - _END_ kayıt gösteriliyor.",
+                infoEmpty:      "Gösterilecek hiç kayıt yok.",
+                loadingRecords: "Kayıtlar yükleniyor.",
+                zeroRecords: "Tablo boş",
+                search: "Arama:",
+                infoFiltered:   "(toplam _MAX_ kayıttan filtrelenenler)",
+                buttons: {
+                    copyTitle: "Panoya kopyalandı.",
+                    copySuccess:"Panoya %d satır kopyalandı",
+                    copy: "Kopyala",
+                    print: "Yazdır",
+                },
+
+                paginate: {
+                    first: "İlk",
+                    previous: "Önceki",
+                    next: "Sonraki",
+                    last: "Son"
+                },
+                responsive: true
+            }
+        });
+        
+        $(document).on("change", ".custom-select", function () {
+            var count = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: "/cms/mektub?count=" + count,
+            });
+        })
+    </script>
+}

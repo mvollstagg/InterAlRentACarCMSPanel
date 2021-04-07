@@ -1,0 +1,12 @@
+.footer-section { 
+    background-color: #D4002A;
+
+    .footer-main { display: flex; flex-wrap: wrap; flex-direction: column; padding: 35px 0px 14px; align-items: center; 
+
+        .footer-logo {
+            span { font-family: $lustrat; font-size: 18px; letter-spacing: 1.5px; color: #fff; }
+        }
+
+        .copright { font-weight: 500; color: #fff; font-family: $helvetica-medium; font-size: 17px; padding: 20px 0px; }
+    }
+}

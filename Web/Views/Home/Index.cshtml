@@ -1,0 +1,271 @@
+﻿@inject IConfiguration _configuration
+@model HomeVM
+
+@{
+    string _lang = ViewBag.Lang ?? "az";
+    Layout = null;
+}
+
+@section seo{
+    @{await Html.RenderPartialAsync("_Seo", "Home");}
+}
+@section Styles{
+    
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="@Model.Settings.SeoTitle">
+    <meta name="description" content="@Model.Settings.SeoDesc">
+    <meta name="keywords" content="@Model.Settings.SeoKeys">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="@Model.Settings.SeoTitle" />
+    <meta property="og:description" content="@Model.Settings.SeoDesc" />
+    <meta property="og:site_name" content="İnterAl Rent A Car" />
+    <meta property="og:locale" content="tr" />
+    <meta property="og:type" content="media" />
+    <meta property="og:image" content="/files/logo/@Model.Settings.LogoUrl" />
+    <meta property="og:url" content="@(Context.Request.Host + Context.Request.Path)" />
+    <meta name="twitter:title" content="@Model.Settings.SeoTitle" />
+    <meta name="twitter:description" content="@Model.Settings.SeoDesc" />
+    <meta name="twitter:site" content="İnterAl Rent A Car" />
+    <meta name="twitter:image" content="/files/logo/@Model.Settings.LogoUrl" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <meta name="language" content="Turkish">
+    <meta name="robots" content=”nosnippet” />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/style.min.css">
+    <title>@Model.Settings.SeoTitle</title>
+</head>
+
+<body>
+
+    <header id="home">
+        <nav class="fixed-top">
+            <div class="container">
+                <div class="menu-main">
+                    <a href="#" class="navbar-logo" style="background-image:url(/files/logo/@Model.Settings.LogoUrl);">
+                        <span>@Model.Settings.LogoText</span>
+                    </a>
+                    <ul id="navi" class="menu-list">
+                        <li class="menu-item fixed-logo">
+                            <span>İNTERAL</span>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#home" class="menu-links scrool active">ANA SAYFA</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#about" class="menu-links scrool">HAKKIMIZDA</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#cars-section" class="menu-links scrool">ARAÇLARIMIZ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#contact" class="menu-links scrool">İLETİŞİM</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="line"></div>
+        </nav>
+    </header>
+
+    <section class="homes">
+        <div class="container-fluid">
+            <div id="home-slider" class="owl-carousel owl-theme">
+                @foreach (var slider in Model.Sliders)
+                {
+                    <div class="item" style="background-image:url(/files/sliders/@slider.PhotoUrl);"></div>
+                }                
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-section">
+            <div class="container">
+                <div class="about-text">
+                    <p class="about-heading">HAKKIMIZDA</p>
+                    <P class="about-text-p">@Model.Settings.AboutText</P>
+                </div>
+                <div class="vizyon-text">
+                    <p class="vizyon-heading">Vizyon & misyon</p>
+                    <P class="vizyon-text-p">@Model.Settings.MissionText</P>
+                </div>
+                <div class="how-works-main">
+                    <h2>NASIL ÇALIŞIR</h2>
+                    <div class="works-list">
+                        <div class="work-item">
+                            <img class="svg" src="~/img/icons/item-1.svg" alt="">
+                            <div class="item-text">
+                                <i class="bi bi-search"></i>
+                                <p>İhtiyacınıza göre araba seçimi</p>
+                            </div>
+                        </div>
+                        <div class="work-item">
+                            <img class="svg" src="~/img/icons/item-2.svg" alt="">
+                            <div class="item-text">
+                                <i class="bi bi-door-open"></i>
+                                <p>Ofisimize uğrayarak görüşme</p>
+                            </div>
+                        </div>
+                        <div class="work-item">
+                            <img class="svg" src="~/img/icons/item-3.svg" alt="">
+                            <div class="item-text">
+                                <i class="bi bi-credit-card"></i>
+                                <p>Seçilen arabaya göre işlemler</p>
+                            </div>
+                        </div>
+                        <div class="work-item">
+                            <img class="svg" src="~/img/icons/item-4.svg" alt="">
+                            <div class="item-text">
+                                <i class="bi bi-arrow-right-circle"></i>
+                                <p>Kontrollü araç teslimi</p>
+                            </div>
+                        </div>
+                        <div class="work-item">
+                            <img class="svg" src="~/img/icons/item-5.svg" alt="">
+                            <div class="item-text">
+                                <i class="bi bi-arrow-left-circle"></i>
+                                <p>Kontrollü araç teslim alımı</p>
+                            </div>
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cars-section">
+        <div class="container">
+           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 gx-0  gx-sm-4 card-partner">
+               @foreach (var car in Model.Cars)
+               {
+                    <div class="col">
+                        <div class="cars-card">
+                            <div class="cars-card-upper">
+                                <img class="startupcard-image" src="~/files/cars/@car.PhotoUrl">
+                            </div>
+                            <div class="cars-detail">
+                                <p class="car-name">@car.Name</p>
+                                <div class="detail-category">
+                                    <div class="box-info">
+                                        <img src="~/img/icons/door-2-con.png" alt="">
+                                        <span>@car.Year</span>
+                                    </div>
+                                    <div class="box-info">
+                                        <img src="~/img/icons/fuel-icon.png" alt="">
+                                        <span>@car.GasType</span>
+                                    </div>
+                                    <div class="box-info">
+                                        <img src="~/img/icons/air-con.png" alt="">
+                                        <span>@(car.AirConditioner ? "Klima Var" : "Klima Yok")</span>
+                                    </div>
+                                    <div class="box-info">
+                                        <img src="~/img/icons/equ-con.png" alt="">
+                                        <span>@car.Gear</span>
+                                    </div>
+                                </div>
+                                <a href="#contact" class="btn btn-cars">Bilgi Al</a>
+                            </div>
+                        </div>
+                    </div>
+               }
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-section">
+            <div class="container">
+                <div class="contact-main">
+                    <div class="form-info">
+                        <div class="left">
+                            <div class="info-text">
+                                <div class="info-box">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <p>
+                                        @Model.Settings.Adress
+                                    </p>
+                                </div>
+                                <div class="info-box">
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <p>
+                                        @Model.Settings.PhoneNumber
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="map">
+                                <iframe
+                                    src="@Model.Settings.MapCode"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <form id="contact-form">
+                                <div class="form-group col-md-12">
+                                    <label for="name">Ad Soyad</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="subject">Konu</label>
+                                    <input type="text" class="form-control" name="subject" id="subject">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="textareas">Mesaj</label>
+                                    <textarea name="textareas" id="textareas" class="form-control"></textarea>
+                                </div>
+                                <div class="form-end   pl-0">
+                                    <button type="submit" class="btn btn-form">Gönder</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-section">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <span>İNTERAL</span>
+                    </div>
+                    <p class="copright">© @Model.Settings.CopyrightText</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js" integrity="sha512-g2PN+aYR0KupTVwea5Ppqw4bxWLLypWdd+h7E0ydT8zF+/Y2Qpk8Y1SnzVw6ZCVJPrgB/91s3VfhVhP7Y4+ucw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+    <script src="~/js/style.js"></script>
+
+</body>
+
+</html>

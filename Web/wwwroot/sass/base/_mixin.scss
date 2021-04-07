@@ -1,0 +1,18 @@
+/*MİXİN CLASS*/
+@mixin border-radius($radius) { border-radius: $radius; }
+
+@mixin display-flex { display: flex; flex-wrap: wrap; }
+
+/*CARD CLASS*/
+
+@mixin -erorr {
+  #full_Name-error { display: none !important; }
+  #phone_Number-error { display: none !important; }
+  #adress-error { display: none !important; }
+  #time_Zone-error { display: none !important; }
+  #email-error { display: none !important; }
+  #languages-error { display: none !important; }
+  #profession-error { display: none !important; }
+  #names-error { display: none !important; }
+  #areas-error { display: none !important; }
+}

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "o+BKxHev0WO+6wLwHXm6NDRWWqY4zZv60htKmSkjliCPE+3VDEUdXSKvEREgSFTqpr5ytqBXA+MapnMxpQzEhA==",
+  "success": true,
+  "projectFilePath": "/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/Utilities.csproj",
+  "expectedPackageFiles": [
+    "/Users/mvollstagg/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/microsoft.aspnetcore.http.features/5.0.0/microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0/microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/system.io.pipelines/5.0.0/system.io.pipelines.5.0.0.nupkg.sha512",
+    "/Users/mvollstagg/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

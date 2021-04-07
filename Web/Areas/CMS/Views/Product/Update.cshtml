@@ -1,0 +1,87 @@
+@model ProductUpdateVM
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-12 my-4 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header py-4">
+                Araç Güncelle <a asp-area="CMS" asp-controller="Product" asp-action="Index" class="float-right btn btn-outline-secondary">Geriye git</a>           
+            </div>
+            <div class="card-body">
+                <form asp-area="CMS" asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label">Araç Adı</label>
+                        <input asp-for="Name" type="text" class="form-control" />
+                        <span asp-validation-for="Name"></span>
+                        <span class="text-danger"></span>
+                    </div>   
+                    <div class="form-group">
+                        <label class="control-label">Model Yılı</label>
+                        <input asp-for="Year" type="text" class="form-control" />
+                        <span asp-validation-for="Year"></span>
+                        <span class="text-danger"></span>
+                    </div>     
+                    <div class="form-group">
+                        <label class="control-label">Klima Var Mı?</label>
+                        <input asp-for="AirConditioner" type="checkbox" style="width: 20px; height: 20px; margin-left: 20px; position: relative; top: 5px;" />
+                    </div>       
+                    <div class="form-group">
+                        <label class="control-label">Gaz Tipi: </label>
+                        <label>
+                            <input type="radio" asp-for="GasType" name="GasType" id="optionsRadios1" value="Benzinli" checked>
+                            Benzinli
+                        </label>
+                        <label>
+                            <input type="radio" asp-for="GasType" name="GasType" id="optionsRadios2" value="Dizel">
+                            Dizel
+                        </label>  
+                        <label>
+                            <input type="radio" asp-for="GasType" name="GasType" id="optionsRadios2" value="LPG">
+                            LPG
+                        </label>                       
+                    </div>   
+                    <div class="form-group">
+                        <label class="control-label">Vites Tipi: </label>
+                        <label>
+                            <input type="radio" asp-for="Gear" name="Gear" id="optionsRadios1" value="Manuel" checked>
+                            Manuel
+                        </label>
+                        <label>
+                            <input type="radio" asp-for="Gear" name="Gear" id="optionsRadios2" value="Otomatik">
+                            Otomatik
+                        </label>                       
+                    </div>    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addnae">Araç Fotoğrafı</span>
+                        </div>
+                        <div class="custom-file">
+                            <input asp-for="MainPhotoFile" type="file" class="custom-file-input" id="file" aria-describedby="addnae" accept=".jpeg, .jpg">
+                            <label class="custom-file-label" for="inputGroupFile01">Fotoğraf yükle</label>
+                        </div>
+                        <span asp-validation-for="MainPhotoFile"></span>
+                        <span class="text-danger"></span>
+                    </div>      
+                    <div class="form-group">
+                        <label class="control-label">Status</label>
+                        <input asp-for="IsActive" type="checkbox" style="width: 20px; height: 20px; margin-left: 20px; position: relative; top: 5px;" />
+                    </div>   
+                    <div class="form-group">
+                        <input type="submit" value="Kaydet" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+      
+</script>
+@section validation{
+    <partial name="_ValidationScriptsPW" />
+}
+

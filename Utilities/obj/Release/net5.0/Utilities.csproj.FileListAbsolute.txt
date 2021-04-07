@@ -1,0 +1,12 @@
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/bin/Release/net5.0/Utilities.deps.json
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/bin/Release/net5.0/Utilities.dll
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/bin/Release/net5.0/ref/Utilities.dll
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/bin/Release/net5.0/Utilities.pdb
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.csprojAssemblyReference.cache
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.AssemblyInfoInputs.cache
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.AssemblyInfo.cs
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.csproj.CoreCompileInputs.cache
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.dll
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/ref/Utilities.dll
+/Users/mvollstagg/Documents/GitHub/interalrentacar/Utilities/obj/Release/net5.0/Utilities.pdb

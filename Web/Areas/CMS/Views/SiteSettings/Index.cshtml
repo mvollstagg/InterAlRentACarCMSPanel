@@ -1,0 +1,118 @@
+﻿@model SiteSettingsVM
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-12 my-4 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                Site Ayarları bölümü                 
+            </div>
+            <div class="card-body"> 
+                <form asp-area="CMS" asp-controller="SiteSettings" asp-action="Save" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+                    <div class="form-group">
+                        <label class="control-label">Hakkımızda</label>
+                        <textarea asp-for="AboutText" class="form-control"></textarea>
+                        <span asp-validation-for="AboutText"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Misyon ve Vizyon</label>
+                        <textarea asp-for="MissionText" class="form-control"></textarea>
+                        <span asp-validation-for="MissionText"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Adres</label>
+                        <input asp-for="Adress" type="text" class="form-control" />
+                        <span asp-validation-for="Adress"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Telefon</label>
+                        <input asp-for="PhoneNumber" type="text" class="form-control" />
+                        <span asp-validation-for="PhoneNumber"></span>
+                        <span class="text-danger"></span>
+                    </div> 
+                    <div class="form-group">
+                        <label class="control-label">CopyRight Yazısı</label>
+                        <input asp-for="CopyrightText" type="text" class="form-control" />
+                        <span asp-validation-for="CopyrightText"></span>
+                        <span class="text-danger"></span>
+                    </div> 
+                    <div class="form-group">
+                        <label class="control-label">Google Maps Kodu</label>
+                        <input asp-for="MapCode" type="text" class="form-control" />
+                        <span asp-validation-for="MapCode"></span>
+                        <span class="text-danger"></span>
+                    </div>          
+                    <div class="form-group">
+                        <label class="control-label">Google Analytics Code</label>
+                        <input asp-for="GoogleAnalyticsCode" type="text" class="form-control" />
+                        <span asp-validation-for="GoogleAnalyticsCode"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Facebook Pixel Code</label>
+                        <input asp-for="FacebookPixel" type="text" class="form-control" />
+                        <span asp-validation-for="FacebookPixel"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Meta Tags</label>
+                        <input asp-for="MetaTags" type="text" class="form-control" />
+                        <span asp-validation-for="MetaTags"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Seo Title</label>
+                        <input asp-for="SeoTitle" type="text" class="form-control" />
+                        <span asp-validation-for="SeoTitle"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Seo Keys</label>
+                        <input asp-for="SeoKeys" type="text" class="form-control" />
+                        <span asp-validation-for="SeoKeys"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Seo Desc</label>
+                        <input asp-for="SeoDesc" type="text" class="form-control" />
+                        <span asp-validation-for="SeoDesc"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <strong class="control-label">Logo</strong>
+                        <img src="~/files/logo/@Model.LogoUrl" style="object-fit: cover;border-radius: 10px;filter: drop-shadow(20px);filter: drop-shadow(3px 3px 4px #000);display: block;" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input asp-for="MainPhotoFile" type="file" class="custom-file-input" id="file" aria-describedby="addnae" accept=".jpeg, .jpg, .png">
+                            <label class="custom-file-label" for="inputGroupFile01">Logo yükle</label>
+                        </div>
+                        <span asp-validation-for="MainPhotoFile"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Logo Altı Yazı</label>
+                        <input asp-for="LogoText" type="text" class="form-control" />
+                        <span asp-validation-for="LogoText"></span>
+                        <span class="text-danger"></span>
+                    </div>  
+                    <div class="form-group">
+                        <input type="submit" value="Təsdiq et" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script> 
+</script>
+@section validation{
+    <partial name="_ValidationScriptsPW" />
+}

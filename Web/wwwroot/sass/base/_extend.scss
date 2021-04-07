@@ -1,0 +1,8 @@
+%img-size { width: 100%; height: 100%; 
+    object-fit: cover; }
+
+%transition { -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -ms-transition: all .4s ease; transition: all .4s ease; }
+
+%transparent { color: transparent; }
+
+%display-flex { display: flex; flex-wrap: wrap; justify-content: space-between; }

@@ -1,0 +1,274 @@
+#home-slider {
+    .item { height: calc(100vh - 120px); overflow: hidden; position: relative; background-image: url(/assets/img/home/slider1.png); background-repeat: no-repeat; background-position: center; background-size: cover;
+        
+        @include mobile-l { height: calc(64vh - 330px); }
+
+        @include mobile-xl { height: calc(50vh - 120px); }
+
+        &::before { content: ''; background-color: #191919; opacity: 0.5; position: absolute; width: 100%; height: 100%; top: 0px; z-index: 1; }
+    }
+
+
+    .owl-dots { bottom: 20px; position: absolute; left: 41px; transform: translate(0%, -0%); @include mobile-l { bottom: 10px; left: 10px; }
+
+        .owl-dot {
+            &:focus { outline: none; }
+
+            &.active {
+                span { opacity: 1; }
+            }
+
+            span { width: 15px; height: 15px; background-color: #ffffff; opacity: 0.5; @include mobile-l { width: 7px; height: 7px; }
+            }
+
+        }
+    }
+}
+.about-section {padding: 70px 0px;  background-color: #f3f4f4; min-height: calc(100vh - 0px); @include desktop-sm { height: inherit !important; }
+
+    @include mobile-display { height: inherit !important;  padding: 20px 0px;}
+
+    .about-text {
+
+        .about-heading { @extend %helvetica-regular-26; color: #373535;  text-align: center; padding-bottom: 26px; @include mobile-l { padding-top: 35px; text-align: center; padding-bottom: 24px; font-size: 19px; }
+        }
+
+        .about-text-p { text-align: center; line-height: 21px; 
+            @extend %helvetica-regular-18; color: #373535; padding-bottom: 20px; padding-top: 14px; @include mobile-l { font-size: 15px; }
+        }
+    }
+
+    .vizyon-text { padding-top: 42px; 
+
+        .vizyon-heading { @extend %helvetica-regular-26; color: #373535; padding-top: 43px; text-align: center; padding-bottom: 26px; @include mobile-l { padding-top: 35px; text-align: center; padding-bottom: 24px; font-size: 19px; }
+        }
+
+        .vizyon-text-p { text-align: center; line-height: 21px; 
+            @extend %helvetica-regular-18; color: #373535; @include mobile-l { font-size: 15px; }
+        }
+    }
+
+    .how-works-main { padding-top: 89px; 
+
+        h2 { @extend %helvetica-regular-26; color: #373535; text-align: center; padding-bottom: 26px; @include mobile-l { text-align: center; padding-bottom: 24px; font-size: 19px; }
+        }
+
+        .works-list { display: flex; flex-wrap: wrap; justify-content: center; 
+
+            .work-item { position: relative; width: 20%; @include desktop-l { width: 18%; }
+
+                @include mobile-xl { width: 40%; margin-bottom: 20px; }
+
+                @include mobile-l { border-radius: 50%; border: 10px solid #a6adaf; width: 210px; margin-bottom: 20px; margin-left: auto; margin-right: auto; height: 210px; }
+
+                &:first-child {
+                    .svg { @include desktop-sm { width: 200px; }
+
+                        @include desktop-l { width: 225px; }
+                    }
+
+                }
+
+                &:last-child {
+                    .svg { @include desktop-sm { width: 204px !important; }
+
+                        @include desktop-l { width: 225px; }
+                    }
+
+                }
+
+                .svg { @include desktop-sm { width: 220px; }
+
+                    @include desktop-l { width: 247px; }
+
+                    @include mobile-l { display: none !important; }
+                }
+
+                &:nth-child(2) { left: -36px; @include desktop-sm { left: -26px; }
+
+                    @include mobile-l { left: 0px; border-color: #00b5b9; }
+
+                    .item-text { left: 85px; width: 54%; @include desktop-l { left: 54px; }
+
+                        @include desktop-sm { left: 51px; }
+
+                        @include mobile-l { left: 24px; width: 76%; }
+                    }
+
+                }
+
+                &:nth-child(3) { left: -30px; @include mobile-l { left: 0px; border-color: #ffa900; }
+
+                    .item-text { left: 87px; width: 54%; @include desktop-l { left: 65px; }
+
+                        @include desktop-sm { left: 64px; }
+
+                        @include mobile-l { left: 29px; width: 71%; }
+                    }
+                }
+
+                &:nth-child(4) { left: -20px; @include mobile-l { left: 0px; border-color: #a98e71; }
+
+                    .item-text { left: 67px; width: 57%; @include desktop-l { left: 57px; }
+
+                        @include desktop-sm { left: 55px; }
+
+                        @include mobile-l { left: 43px; }
+                    }
+                }
+
+                &:nth-child(5) { left: -25px; @include desktop-sm { left: -13px; }
+
+                    @include mobile-l { left: 0px; border-color: #414042; }
+
+                    .item-text { left: 99px; width: 46%; @include desktop-l { left: 66px; width: 61%; top: 54px; }
+
+                        p { @include desktop-sm { font-size: 13px; }
+                        }
+
+                        @include desktop-sm { left: 56px; width: 69%; }
+
+                        @include mobile-l { left: 27px; top: 43px; width: 71%; }
+                    }
+                }
+
+                .item-text { position: absolute; top: 56px; left: 37px; width: 54%; text-align: center; @include desktop-sm { top: 58px; left: 25px; }
+
+                    @include desktop-l { top: 59px; left: 23px; }
+
+                    @include mobile-l { width: 65%; }
+
+                    p { @extend %helvetica-regular-14; color: #373535; padding-top: 13px; }
+
+                    i { color: #000; font-size: 30px; height: 28px; }
+                }
+            }
+        }
+
+        .idebu-about-text { padding-top: 48px; width: 62%; text-align: center; margin-left: auto; margin-right: auto; @include mobile-xl { padding-top: 38px; width: 100%; }
+
+            @include mobile-l { padding-top: 38px; width: 100%; }
+
+            p { @extend %helvetica-regular-18; color: #373535; padding-bottom: 76px; padding-top: 34px; @include mobile-l { font-size: 15px; }
+            }
+        }
+    }
+}
+
+#cars-section { min-height: calc(100vh - 0px); padding: 76px 0px; 
+
+    .card-partner {
+        .cars-card { margin-bottom: 29px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-content: flex-end; position: relative; 
+
+            &:hover { box-shadow: 0 3px 20px rgba(37, 77, 128, 0.25); border-color: transparent; }
+
+            .cars-card-upper { z-index: 1; box-sizing: border-box; border-radius: 10px; overflow: hidden; position: relative; display: block; 
+
+                img { display: block; background-size: cover; background-position: center center; position: absolute; width: 100%; top: 0; border-radius: .3em; overflow: hidden; height: 100%; 
+                    object-fit: cover; }
+
+                &::before { content: ""; display: block; padding-bottom: 67%; height: 0; }
+            }
+
+            .cars-detail { padding: 20px 20px; 
+
+                .car-name { font-size: 17px; font-family: $helvetica-regular; color: #666; margin-bottom: 20px; }
+
+                .detail-category { display: flex; flex-wrap: wrap; 
+
+                    .box-info { display: flex; margin-bottom: 10px; width: 114px; 
+
+                        img { width: 15px; margin-right: 10px; height: fit-content; }
+
+                        span { font-size: 16px; color: #666; font-family: $helvetica-regular; }
+                    }
+                }
+
+                .btn-cars { background-color: #d2202f; color: #ffffff; border-radius: 10px; width: 100%; display: block; margin-top: 10px; font-family: $helvetica-regular; font-size: 18px; }
+            }
+
+        }
+    }
+}
+
+.contact-section {    background-color: #f3f4f4; height: calc(100vh - 0px); position: relative; @include mobile-display { height: inherit !important; }
+
+    @include desktop-sm { height: inherit !important; }
+    
+    .contact-main { padding-top: 66px; @include mobile-l { padding-top: 54px; }
+
+        @include desktop-sm { padding-top: 39px; }
+
+        @include desktop-l { padding-top: 28px; }
+
+        .form-info { display: flex; padding-top: 40px; @include mobile-display { flex-direction: column; }
+
+            .left { width: 50%; @include mobile-display { width: 100%; }
+
+                .map { width: 500px; height: 300px; border-radius: 25px; overflow: hidden; @include desktop-sm { width: 350px; height: 250px; }
+
+                    @include mobile-display { width: 100%; }
+                }
+
+                .info-text {
+                    .info-box { display: flex; margin-bottom: 35px; 
+
+                        i { font-size: 27px; color: #000; margin-right: 10px; }
+
+                        p { @extend %helvetica-regular-18; color: #000; width: 233px; line-height: 21px; }
+                    }
+                }
+            }
+
+            .right { width: 50%; @include mobile-display { width: 100%; }
+
+                form { @include mobile-display { margin-top: 50px; }
+
+                    .form-group { margin-bottom: 25px; 
+
+                        #textareas {resize: none; height: 200px; @include mobile-l { height: 200px; }
+
+                        }
+
+                        label { padding-bottom: 5px; padding-left: 20px; font-size: 17px; font-weight: 400; font-family: $helvetica-regular; color: #000; }
+
+                        .form-control {background-color: transparent; border-color: #000;  color: #000; font-family: $helvetica-regular; border-radius: 20px; height: 48px; 
+
+                            &:focus { box-shadow: none; border-color: #000; }
+                        }
+
+                        .error { border-color: red; }
+
+
+                    }
+
+                    .form-end { padding-bottom: 162px; text-align: center; @include desktop-l { padding-bottom: 47px; }
+
+                        @include desktop-sm { padding-bottom: 40px; }
+
+                        .btn-form { @extend %transition; line-height: 1px; font-size: 20px; margin-top: 33px; font-weight: 700; color: #000; font-family: $helvetica-regular; width: 275px; height: 39px; border-radius: 20px; border: 2px solid #000; background-color: transparent; height: 45px; @include desktop-l { margin-top: 15px; width: 240px; font-size: 20px; }
+
+                            @include desktop-sm { margin-top: 21px; }
+
+                            &:focus { box-shadow: none; }
+
+                            &:hover { background-color: #d2202f; color: #fff; border-color: #d2202f; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.block { display: block !important; }
+
+header { height: 120px; @include mobile-l { height: 140px; }
+}
+
+.homes{
+    height: calc(100vh - 120px); overflow: hidden;
+    @include mobile-l { height: calc(64vh - 330px); }
+
+    @include mobile-xl { height: calc(50vh - 120px); }
+}
