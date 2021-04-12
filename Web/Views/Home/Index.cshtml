@@ -94,6 +94,7 @@
 
     <section id="about">
         <div class="about-section">
+            <div class="imgs"></div>
             <div class="container">
                 <div class="about-text">
                     <p class="about-heading">HAKKIMIZDA</p>
@@ -104,7 +105,7 @@
                     <P class="vizyon-text-p">@Model.Settings.MissionText</P>
                 </div>
                 <div class="how-works-main">
-                    <h2>NASIL ÇALIŞIR</h2>
+                    <p>NASIL ÇALIŞIR</p>
                     <div class="works-list">
                         <div class="work-item">
                             <img class="svg" src="~/img/icons/item-1.svg" alt="">
@@ -252,6 +253,18 @@
                     <div class="footer-logo">
                         <span>İNTERAL</span>
                     </div>
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <a href="@Model.Settings.FacebookUrl" class="social-links">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="@Model.Settings.InstagramUrl" class="social-links">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
                     <p class="copright">© @Model.Settings.CopyrightText</p>
                 </div>
             </div>

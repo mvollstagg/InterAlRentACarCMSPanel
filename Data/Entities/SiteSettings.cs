@@ -19,6 +19,7 @@ namespace Data.Entities
         public string SeoTitle { get; set; }
         public string SeoKeys { get; set; }
         public string SeoDesc { get; set; }
-        
+        public string FacebookUrl { get; set; }
+        public string InstagramUrl { get; set; }
     }
 }

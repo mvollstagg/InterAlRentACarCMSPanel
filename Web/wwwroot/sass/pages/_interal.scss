@@ -1,7 +1,5 @@
 #home-slider {
-    .item { height: calc(100vh - 120px); overflow: hidden; position: relative; background-image: url(/assets/img/home/slider1.png); background-repeat: no-repeat; background-position: center; background-size: cover;
-        
-        @include mobile-l { height: calc(64vh - 330px); }
+    .item { height: calc(100vh - 120px); overflow: hidden; position: relative; background-image: url(/assets/img/home/slider1.png); background-repeat: no-repeat; background-position: center; background-size: cover; @include mobile-l { height: calc(64vh - 330px); }
 
         @include mobile-xl { height: calc(50vh - 120px); }
 
@@ -24,13 +22,22 @@
         }
     }
 }
-.about-section {padding: 70px 0px;  background-color: #f3f4f4; min-height: calc(100vh - 0px); @include desktop-sm { height: inherit !important; }
 
-    @include mobile-display { height: inherit !important;  padding: 20px 0px;}
+.about-section { position: relative; padding: 70px 0px; background-color: #f3f4f4; min-height: calc(100vh - 0px); @include desktop-sm { height: inherit !important; }
+
+    .imgs { @include mobile-display { display: none; }
+
+        background-image: url(/assets/img/icons/bg-02.png); position: absolute; right: 0px; bottom: 0px; width: 609px; height: 438px; background-repeat: no-repeat; @include desktop-xl { right: -62px; bottom: 2px; width: 662px; height: 332px; }
+
+        @include desktop-l { right: -62px; bottom: 2px; width: 662px; height: 332px; }
+
+        @include desktop-sm { right: -62px; bottom: 2px; width: 662px; height: 332px; }
+    }
+
+    @include mobile-display { height: inherit !important; padding: 20px 0px; }
 
     .about-text {
-
-        .about-heading { @extend %helvetica-regular-26; color: #373535;  text-align: center; padding-bottom: 26px; @include mobile-l { padding-top: 35px; text-align: center; padding-bottom: 24px; font-size: 19px; }
+        .about-heading {font-size: 20px; font-family: $lustra-medium; color: #373535; text-align: center; padding-bottom: 26px; @include mobile-l { padding-top: 35px; text-align: center; padding-bottom: 24px; font-size: 19px; }
         }
 
         .about-text-p { text-align: center; line-height: 21px; 
@@ -38,9 +45,8 @@
         }
     }
 
-    .vizyon-text { padding-top: 42px; 
-
-        .vizyon-heading { @extend %helvetica-regular-26; color: #373535; padding-top: 43px; text-align: center; padding-bottom: 26px; @include mobile-l { padding-top: 35px; text-align: center; padding-bottom: 24px; font-size: 19px; }
+    .vizyon-text {
+        .vizyon-heading { font-size: 20px; font-family: $lustra-medium; color: #373535; padding-top: 30px; text-align: center; padding-bottom: 26px; @include mobile-l { padding-top: 35px; text-align: center; padding-bottom: 24px; font-size: 19px; }
         }
 
         .vizyon-text-p { text-align: center; line-height: 21px; 
@@ -48,9 +54,9 @@
         }
     }
 
-    .how-works-main { padding-top: 89px; 
+    .how-works-main {    padding-top: 51px;
 
-        h2 { @extend %helvetica-regular-26; color: #373535; text-align: center; padding-bottom: 26px; @include mobile-l { text-align: center; padding-bottom: 24px; font-size: 19px; }
+        .how-works-heading {font-size: 20px; font-family: $lustra-medium; color: #373535; text-align: center; padding-bottom: 26px; @include mobile-l { text-align: center; padding-bottom: 24px; font-size: 19px; }
         }
 
         .works-list { display: flex; flex-wrap: wrap; justify-content: center; 
@@ -99,6 +105,8 @@
 
                 &:nth-child(3) { left: -30px; @include mobile-l { left: 0px; border-color: #ffa900; }
 
+                    .svg path {                        fill: #D4002A; }
+
                     .item-text { left: 87px; width: 54%; @include desktop-l { left: 65px; }
 
                         @include desktop-sm { left: 64px; }
@@ -108,6 +116,8 @@
                 }
 
                 &:nth-child(4) { left: -20px; @include mobile-l { left: 0px; border-color: #a98e71; }
+
+                    .svg path {                        fill: #ff9200; }
 
                     .item-text { left: 67px; width: 57%; @include desktop-l { left: 57px; }
 
@@ -155,7 +165,8 @@
     }
 }
 
-#cars-section { min-height: calc(100vh - 0px); padding: 76px 0px; 
+#cars-section { min-height: calc(100vh - 0px); padding: 76px 0px; position: relative; 
+
 
     .card-partner {
         .cars-card { margin-bottom: 29px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-content: flex-end; position: relative; 
@@ -191,10 +202,10 @@
     }
 }
 
-.contact-section {    background-color: #f3f4f4; height: calc(100vh - 0px); position: relative; @include mobile-display { height: inherit !important; }
+.contact-section { background-color: #f3f4f4; height: calc(100vh - 0px); position: relative; @include mobile-display { height: inherit !important; }
 
     @include desktop-sm { height: inherit !important; }
-    
+
     .contact-main { padding-top: 66px; @include mobile-l { padding-top: 54px; }
 
         @include desktop-sm { padding-top: 39px; }
@@ -226,13 +237,13 @@
 
                     .form-group { margin-bottom: 25px; 
 
-                        #textareas {resize: none; height: 200px; @include mobile-l { height: 200px; }
+                        #textareas { resize: none; height: 200px; @include mobile-l { height: 200px; }
 
                         }
 
                         label { padding-bottom: 5px; padding-left: 20px; font-size: 17px; font-weight: 400; font-family: $helvetica-regular; color: #000; }
 
-                        .form-control {background-color: transparent; border-color: #000;  color: #000; font-family: $helvetica-regular; border-radius: 20px; height: 48px; 
+                        .form-control { background-color: transparent; border-color: #000; color: #000; font-family: $helvetica-regular; border-radius: 20px; height: 48px; 
 
                             &:focus { box-shadow: none; border-color: #000; }
                         }
@@ -266,9 +277,7 @@
 header { height: 120px; @include mobile-l { height: 140px; }
 }
 
-.homes{
-    height: calc(100vh - 120px); overflow: hidden;
-    @include mobile-l { height: calc(64vh - 330px); }
+.homes { height: calc(100vh - 120px); overflow: hidden; @include mobile-l { height: calc(64vh - 330px); }
 
     @include mobile-xl { height: calc(50vh - 120px); }
 }

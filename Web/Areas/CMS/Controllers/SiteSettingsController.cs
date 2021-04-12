@@ -56,7 +56,9 @@ namespace Web.Areas.CMS.Controllers
                     MetaTags = siteSettingsFromDb.MetaTags,
                     SeoTitle = siteSettingsFromDb.SeoTitle,
                     SeoKeys = siteSettingsFromDb.SeoKeys,
-                    SeoDesc = siteSettingsFromDb.SeoDesc
+                    SeoDesc = siteSettingsFromDb.SeoDesc,
+                    FacebookUrl = siteSettingsFromDb.FacebookUrl,
+                    InstagramUrl = siteSettingsFromDb.InstagramUrl
                 };
                 
                 return View(settingsVM);
@@ -93,6 +95,8 @@ namespace Web.Areas.CMS.Controllers
             siteSettingsFromDb.SeoTitle = siteSettingsUpdateVM.SeoTitle;
             siteSettingsFromDb.SeoKeys = siteSettingsUpdateVM.SeoKeys;
             siteSettingsFromDb.SeoDesc = siteSettingsUpdateVM.SeoDesc;
+            siteSettingsFromDb.FacebookUrl = siteSettingsUpdateVM.FacebookUrl;
+            siteSettingsFromDb.InstagramUrl = siteSettingsUpdateVM.InstagramUrl;
 
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "SiteSettings");             
