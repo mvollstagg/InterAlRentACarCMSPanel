@@ -31,11 +31,11 @@ namespace Web.Controllers
             HomeVM homeVM = new HomeVM
             {
                 Cars = await _context.Cars.OrderByDescending(x => x.RecordedAtDate)
-                                                    .Where(x => x.IsActive == true).Take(4)
+                                                    .Where(x => x.IsActive == true)
                                                     .ToListAsync(),
 
                 Sliders = await _context.Sliders.OrderByDescending(x => x.RecordedAtDate)
-                                                    .Where(x => x.IsActive == true).Take(3)
+                                                    .Where(x => x.IsActive == true)
                                                     .ToListAsync(),
                 
                 Settings = await _context.SiteSettings.FirstOrDefaultAsync()

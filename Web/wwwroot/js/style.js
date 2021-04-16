@@ -116,36 +116,36 @@ $(document).ready(function () {
 
   $(document).on("submit", "#contact-form", function (e) {
     e.preventDefault();
-    var FirstName = $("#name").val();
+    var FullName = $("#name").val();
+    var Email = $("#email").val();
+    var Subject = $("#subject").val();
+    var Message = $("#textareas").val();
     $.ajax({
-      url: "haqqimizda/bizeqosulun",
+      url: "anasayfa/iletisim",
       type: "POST",
       data: {
-        firstName: FirstName,
-        lastName: LastName,
+        fullName: FullName,
         email: Email,
-        phoneNumber: PhoneNumber,
-        job: Job,
-        profession: Profession,
-        skills: Skills,
+        subject: Subject,
+        message: Message
       },
       dataType: "json",
       success: function (data) {
         Swal.fire({
-          title: "Əməliyyat uğurlu oldu!",
-          text: "Qeydinizi uğurla başa vurduq.",
+          title: "Başarılı!",
+          text: "Kaydınız alındı. En kısa süre içerisinde size geri dönüş yapılacaktır.",
           icon: "success",
-          timer: 2000,
+          timer: 3000,
           showConfirmButton: false,
         });
         closeModal();
       },
       error: function (data) {
         Swal.fire({
-          title: "Əməliyyat zamanı bir səhv baş verdi!",
-          text: "Xahiş edirəm bir az sonra yenidən cəhd edin.",
+          title: "Başarısız!",
+          text: "Kaydınız alınırken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
           icon: "error",
-          timer: 2000,
+          timer: 3000,
           showConfirmButton: false,
         });
       },
